@@ -1,0 +1,177 @@
+<<<<<<< HEAD
+body{
+    box-sizing: border-box;
+    margin-top:0px;
+}
+.content-wrapper{
+    
+}
+header{
+    width:100%;
+   background:#333a45;  
+   padding-bottom:40px; 
+  
+}
+
+.header-content{
+    background-color:#333a45;
+    width:100%;
+    float: left;
+    font-family:'Gotham';
+    padding-bottom: 10px;
+    padding-top:10px;
+   
+   
+}
+.section-videopromotional{
+    background:#f2f2f2;
+    width:100%;
+     
+    
+}
+.section-testimonials{
+    background:#edebeb;
+    padding:40px 0px 40px 0px;
+    width:100%;
+}
+.section-download{
+    background:#f2f2f2;
+    color:#626b75;
+    width:100%;
+    padding:30px 0px 30px 0px;
+    float:left;
+        
+}
+.section-clients{
+    background:#faf8f8;
+    width:100%;
+    float:left;
+        
+}
+.section-plans{
+    background:#f1f1f1;
+    width:100%;
+    float:left;
+    padding:40px 0px 40px 0px;
+}
+.section-works{
+    background:#fbf8f8;
+    width:100%;
+    float:left;
+    padding:40px 0px 40px 0px;
+    
+}
+.section-color-gray{
+    background: #f1f1f1;
+    width:100%;
+    float:left;
+    padding:15px 0px 15px 0px;
+}
+.section-twitter{
+    float:left;
+    width:100%;
+    position: relative;
+  
+    
+}
+.section-footer{
+    background:#333b46;
+    width:100%;
+    margin-top:152px;    
+    float:left;
+    position: relative;
+    text-align: center;
+    padding:35px 0px 35px 0px;
+     
+}
+
+=======
+body{
+    box-sizing: border-box;
+    margin-top:0px;
+}
+.content-wrapper{
+    padding:10px;
+}
+header{
+    width:100%;
+   background:#333a45;  
+   padding-bottom:40px; 
+  
+}
+
+.header-content{
+    background-color:#333a45;
+    width:100%;
+    float: left;
+    font-family:'Gotham';
+    padding-bottom: 10px;
+    padding-top:30px;
+   
+}
+.section-videopromotional{
+    background:#f2f2f2;
+    width:100%;
+     
+    
+}
+.section-testimonials{
+    background:#edebeb;
+    padding:40px 0px 40px 0px;
+    width:100%;
+}
+.section-download{
+    background:#f2f2f2;
+    color:#626b75;
+    width:100%;
+    padding:30px 0px 30px 0px;
+    float:left;
+        
+}
+.section-clients{
+    background:#faf8f8;
+    width:100%;
+    float:left;
+        
+}
+.section-plans{
+    background:#f1f1f1;
+    width:100%;
+    float:left;
+    padding:40px 0px 40px 0px;
+}
+.section-works{
+    background:#fbf8f8;
+    width:100%;
+    float:left;
+    padding:40px 0px 40px 0px;
+    
+}
+.section-color-gray{
+    background: #f1f1f1;
+    width:100%;
+    float:left;
+    padding:15px 0px 15px 0px;
+}
+.section-twitter{
+    float:left;
+    width:100%;
+  
+    
+}
+.section-footer{
+    background:#333b46;
+    width:100%;
+    margin-top:00px;  
+    float:left; 
+    padding:20px;
+     
+    
+}
+.test{
+    background:#333b46;
+    width:100%;
+    float:left; 
+    padding:20px;
+}
+>>>>>>> 3703d46517282e3f48d6e04c4fea281c9172e0b3
