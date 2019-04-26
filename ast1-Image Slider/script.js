@@ -12,9 +12,9 @@ var next = document.getElementById('next');
  function imageSlide(){
     imageSlider =  setInterval(function(){
         if(counter === -imageMaxSlideLength){
-
+            imageIndex++;
             clearInterval(imageSlider);                
-            setTimeout(imageSliding,2000);
+            setTimeout(imageSlide,2000);
            
             console.log(counter);
             console.log(imageMaxSlideLength);
@@ -27,6 +27,9 @@ var next = document.getElementById('next');
                 slideLengthBreak = slideLengthBreak + imageWidth ;
                 clearInterval(imageSlider);                
                  setTimeout(imageSlide,2000);
+                 if(imageIndex === 4){
+                     imageIndex = 1;
+                 }
                  imageIndex++;
                  console.log(imageIndex);           
             }
@@ -36,24 +39,42 @@ var next = document.getElementById('next');
             console.log(imageBox.style.left);
         }
         
-    },6);
+    },10);
 
  }
 
 imageSlide();
-function changeMargin() {
-    document.getElementById('image-box').style.left = 1000 + 'px';
-    console.log(document.getElementById('image-box').style.left);
-  }
+
+
+
+prev.addEventListener('click',function(){
+
+    if(imageIndex === 1)
+    {
+        imageIndex = 4 ;
+        clearInterval(imageSlider);
+        imageBox.style.marginLeft = - (imageIndex-1) * imageWidth + 'px'; 
+        setTimeout(imageSlide,2000);
+    
+    }
+    else{
+        clearInterval(imageSlider);
+        imageBox.style.marginLeft =  - (imageIndex-1) * imageWidth + 'px'; 
+        setTimeout(imageSlide,2000);    
+    }   
+  
+});
 
 next.addEventListener('click',function(){
     
-    var getindex = imageIndex;
-    console.log('test');
-    clearInterval(imageSlider);
-    console.log(counter);
-    changeMargin();
-    // imageBox.style.left = -700 + 'px';
-    // console.log(imageBox.style.left);
-
+    if(imageIndex === 4){
+        imageIndex= 1;
+        document.getElementById('image-box').style.marginLeft = - (imageIndex-1) * imageWidth + 'px'; 
+        clearInterval(imageSlider);    
+        setTimeout(imageSlide,2000);
+    }else{
+        document.getElementById('image-box').style.marginLeft = -(imageIndex-1 +1) * imageWidth + 'px'; 
+        clearInterval(imageSlider);    
+        setTimeout(imageSlide,2000);
+       }    
 });

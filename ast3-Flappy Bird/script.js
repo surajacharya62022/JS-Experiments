@@ -5,6 +5,8 @@ const BOTTOM_BACKGROUND_HEIGHT = 118;
 const LENGTH_BETWEEN_TWO_PIPE = 250;
 var dieSound= new Audio();
 dieSound.src = './audio/hit.wav';
+var wingSound = new Audio();
+wingSound.src= './audio/wing.wav';
 
 window.onload = function() {
 var canvas =  document.getElementById('canvas-container');
@@ -139,6 +141,7 @@ const Bird =  function(x,y,ctx){
    var increaseBirdPositionTopWhenSpaceIsPressed = this;
     window.addEventListener('keydown',function(e){
         if(e.keyCode === 32){           
+            wingSound.play();
             increaseBirdPositionTopWhenSpaceIsPressed.vely = -15;
         }
     });
