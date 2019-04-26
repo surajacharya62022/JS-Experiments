@@ -1,0 +1,20 @@
+#container{
+    width:700px;
+    height:400px;
+margin:0 auto;
+overflow: hidden;
+
+
+}
+#image-box{
+    width:2800px;
+    height:400px;
+    
+    
+}
+#image-box img{
+    width:700px;
+    height:400px;
+    float: left;
+    
+}
