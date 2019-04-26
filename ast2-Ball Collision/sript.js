@@ -12,22 +12,11 @@ function distanceOfCircles(x1, y1, x2, y2) {
    // console.log(Math.sqrt(Math.pow(xDis, 2) + Math.pow(yDis, 2)));
 }
 
-//
 function randomIntFromRange(min,max){
     return Math.floor(Math.random() * (max-min)+min);
 }
 
-// function getRandomInt(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     let num = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-   
-//     if (num === 0) {
-//       getRandomInt(min, max);
-//     } else {
-//       return num;
-//     }
-//    }
+
 function circle(x, y, radius, color) {
     this.x = x;
     this.y = y;
@@ -52,12 +41,10 @@ function circle(x, y, radius, color) {
             if(distanceOfCircles(this.x,this.y,numberOfCircles[i].x,numberOfCircles[i].y) - this.radius * 2 < 0){
              //  resolveCollision(this, numberOfCircles[i]);
                 this.velocity.dx = -this.velocity.dx;
-              this.velocity.dy = -this.velocity.dy;       
-            
+              this.velocity.dy = -this.velocity.dy;             
                
             }
-        }
-        
+        }        
         //collide within the window frame
         if(this.x - this.radius <= 0 || this.x + this.radius >= innerWidth){
             this.velocity.dx = - this.velocity.dx;
@@ -132,49 +119,49 @@ console.log(innerWidth);
 init();
 animate();
 
-function rotate(velocity, angle) {
-    const rotatedVelocities = {
-        x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
-        y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
-    };
+// function rotate(velocity, angle) {
+//     const rotatedVelocities = {
+//         x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+//         y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+//     };
 
-    return rotatedVelocities;
-}
+//     return rotatedVelocities;
+// }
 
 
-function resolveCollision(particle, otherParticle) {
-    const xVelocityDiff = particle.velocity.x - otherParticle.velocity.x;
-    const yVelocityDiff = particle.velocity.y - otherParticle.velocity.y;
+// function resolveCollision(particle, otherParticle) {
+//     const xVelocityDiff = particle.velocity.x - otherParticle.velocity.x;
+//     const yVelocityDiff = particle.velocity.y - otherParticle.velocity.y;
 
-    const xDist = otherParticle.x - particle.x;
-    const yDist = otherParticle.y - particle.y;
+//     const xDist = otherParticle.x - particle.x;
+//     const yDist = otherParticle.y - particle.y;
 
-    // Prevent accidental overlap of particles
-    if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+//     // Prevent accidental overlap of particles
+//     if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
 
-        // Grab angle between the two colliding particles
-        const angle = -Math.atan2(otherParticle.y - particle.y, otherParticle.x - particle.x);
+//         // Grab angle between the two colliding particles
+//         const angle = -Math.atan2(otherParticle.y - particle.y, otherParticle.x - particle.x);
 
-        // Store mass in var for better readability in collision equation
-        const m1 = particle.mass;
-        const m2 = otherParticle.mass;
+//         // Store mass in var for better readability in collision equation
+//         const m1 = particle.mass;
+//         const m2 = otherParticle.mass;
 
-        // Velocity before equation
-        const u1 = rotate(particle.velocity, angle);
-        const u2 = rotate(otherParticle.velocity, angle);
+//         // Velocity before equation
+//         const u1 = rotate(particle.velocity, angle);
+//         const u2 = rotate(otherParticle.velocity, angle);
 
-        // Velocity after 1d collision equation
-        const v1 = { x: u1.x * (m1 - m2) / (m1 + m2) + u2.x * 2 * m2 / (m1 + m2), y: u1.y };
-        const v2 = { x: u2.x * (m1 - m2) / (m1 + m2) + u1.x * 2 * m2 / (m1 + m2), y: u2.y };
+//         // Velocity after 1d collision equation
+//         const v1 = { x: u1.x * (m1 - m2) / (m1 + m2) + u2.x * 2 * m2 / (m1 + m2), y: u1.y };
+//         const v2 = { x: u2.x * (m1 - m2) / (m1 + m2) + u1.x * 2 * m2 / (m1 + m2), y: u2.y };
 
-        // Final velocity after rotating axis back to original location
-        const vFinal1 = rotate(v1, -angle);
-        const vFinal2 = rotate(v2, -angle);
+//         // Final velocity after rotating axis back to original location
+//         const vFinal1 = rotate(v1, -angle);
+//         const vFinal2 = rotate(v2, -angle);
 
-        // Swap particle velocities for realistic bounce effect
-        particle.velocity.x = vFinal1.x;
-        particle.velocity.y = vFinal1.y;
-        otherParticle.velocity.x = vFinal2.x;
-        otherParticle.velocity.y = vFinal2.y;
-    }
-}
+//         // Swap particle velocities for realistic bounce effect
+//         particle.velocity.x = vFinal1.x;
+//         particle.velocity.y = vFinal1.y;
+//         otherParticle.velocity.x = vFinal2.x;
+//         otherParticle.velocity.y = vFinal2.y;
+//     }
+// }

@@ -99,12 +99,12 @@ WindowBackground.prototype.update = function (){
    
 }
 
-
 WindowBackground.prototype.render = function () {
    for(let i = 0; i <= this.canvas.width/this.bgWidth+1; i++){   
     this.ctx.drawImage(this.bgImg,this.bgPos + i * this.bgWidth,0);
    }
 }
+
 const bottomBackground = function (canvas, ctx){
     this.canvas =canvas;
     this.xp = 0;

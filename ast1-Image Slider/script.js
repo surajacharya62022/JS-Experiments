@@ -8,17 +8,12 @@ var imageIndex = 1;
 var prev=document.getElementById('prev');
 var next = document.getElementById('next');
 
-
  function imageSlide(){
     imageSlider =  setInterval(function(){
         if(counter === -imageMaxSlideLength){
             imageIndex++;
             clearInterval(imageSlider);                
-            setTimeout(imageSlide,2000);
-           
-            console.log(counter);
-            console.log(imageMaxSlideLength);
-           // imageBox.style.transition = '0.6s ease';
+            setTimeout(imageSlide,2000);                      
             imageBox.style.left= 2100 + 'px';
             counter = 0;
             slideLengthBreak = imageWidth ;
@@ -44,8 +39,6 @@ var next = document.getElementById('next');
  }
 
 imageSlide();
-
-
 
 prev.addEventListener('click',function(){
 
